@@ -94,3 +94,6 @@ function localSet(key, value) {
     });
   });
 }
+
+// Array.prototype.slice.apply(document.querySelectorAll('[name="listType"]')).filter(r => r.checked)[0].value
+// document.querySelector('#urlList').value.split('\n')

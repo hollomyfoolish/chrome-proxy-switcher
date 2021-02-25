@@ -29,6 +29,9 @@ function tableAdd(i, proxy, selected) {
     switchProxy(proxy);
     chrome.browserAction.setTitle({title: nameProxy(proxy)});
     saveSelected(proxy);
+
+    // var bg = chrome.extension.getBackgroundPage();
+    chrome.storage.sync.get('urlListType', e => alert(e.urlListType));
   };
   td.appendChild(input);
   let label = document.createElement("label");
@@ -113,3 +116,7 @@ function parseURL(url) {
     port: parseInt(m.groups.port)
   }
 }
+
+// setInterval(() => {
+//   chrome.storage.sync.get('urlListType', console.log);
+// }, 5000);

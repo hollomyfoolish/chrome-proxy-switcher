@@ -8,6 +8,9 @@ async function init() {
   document.getElementById("mode").onchange = changeMode;
   changeMode();
   document.getElementById("add").onclick = addProxy;
+
+  document.querySelectorAll('[name="listType"]')
+    .forEach(r => r.addEventListener('click', e => chrome.storage.sync.set({"urlListType": r.value}, () => {})));
 }
 
 function changeMode() {
